@@ -186,3 +186,33 @@ function findToTalEven() {
     "#result2"
   ).innerHTML = `Tổng các số chẵn trong mảng là : ${total}`;
 }
+
+// filter: trả về 1 mảng mới chứa các phần tử thỏa điều kiện, không ảnh hưởng mảng ban đầu
+var oddNumber = arrayNumber2.filter(function (n) {
+  return n % 2 !== 0;
+});
+console.log("oddNumber: ", oddNumber);
+console.log("arrayNumber2 sau khi gọi filter", arrayNumber2);
+
+// map() trả về mảng mới có cùng kích thước với mảng ban đầu và từng phần tử đã được xử lý.
+var color = ["yellow", "pink", "blue"];
+var upperColor = color.map(function (c, index) {
+  console.log("index", index);
+  return c.toUpperCase();
+});
+console.log("upperColor", upperColor);
+console.log("color sau khi map", color);
+
+// querySelectorAll
+var className = document.querySelectorAll(".test");
+console.log("className: ", className);
+var content = [];
+
+for (var index = 0; index < className.length; index++) {
+  // lấy ra nội dung tại vị trí index
+  var text = className[index].innerHTML;
+  console.log("text: ", text);
+  content.push(text);
+}
+
+console.log("arr content", content);
